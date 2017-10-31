@@ -1,0 +1,1756 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小米商城 - 小米6、红米Note 4X、小米5X、小米笔记本官方网站</title>
+<link rel="shortcut icon" href="pic/logo.ico" type="image/x-icon"/>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		text-decoration: none;
+		font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+		font-style:normal;
+	}
+	
+	@font-face {
+		font-family: 'iconfont';
+		src: url('iconfont.eot');
+		src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+		url('iconfont.woff') format('woff'),
+		url('iconfont.ttf') format('truetype'),
+		url('iconfont.svg#iconfont') format('svg');
+	}
+	.icon{font-family:iconfont;}
+	.icon1{margin-right: 6px;font-family:iconfont; font-size: 15px;}
+	.icon2{font-family:iconfont; font-size: 15px;}
+	.icon3{font-family:iconfont;color: rgba(255,255,255,0.5);}
+	.icon4{font-family:iconfont;font-size: 25px;}
+	.xiaoguo{transition: 0.4s;}
+	.xiaoguo:hover{
+		box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+		transform: translate3d(0, -2px, 0);
+		transition: 0.4s;
+	}
+	
+	/*	site_bn_bar */
+	.site_bn_bar{width: 100%;background: url( pic/cms_15010570123743_yImAg.jpg) no-repeat center;}
+	.site_bn_bar a{display: block;height: 120px;}
+	
+	/*	site_topbar */
+	.site_topbar{width: 100%;background: #333;font-size: 12px;}
+	.site_topbar .container{width: 1226px;height: 40px;margin: 0 auto;line-height: 40px;}
+	.site_topbar .container a{color: #b0b0b0;}
+	.site_topbar .container li{float: left;}
+	.site_topbar .container span{margin: 0 6px;color: #424242;}
+	.site_topbar .container .topbar_cart{
+		float: right;
+		margin-left: 25px;
+		position: relative;
+	}
+	.site_topbar .container .topbar_cart a{
+		display: block;
+		width: 120px;
+		height: 40px;
+		background: #424242;
+		text-align: center;
+		line-height: 40px;
+	}
+	.site_topbar .container .topbar_cart  span{margin: 0;color: #b0b0b0;}
+	.site_topbar .container .topbar_cart .cart_menu{
+		position: absolute;
+		top: 40px;
+		right: 0;
+		width: 316px;
+		box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+		background: #fff;
+		padding-top: 15px;
+		color: #424242;
+		display: none;
+		transition:3s;
+		z-index: 1;
+	}
+	.site_topbar .container .topbar_cart:hover .cart_menu{display: block;transition:3s;}
+	.site_topbar .container .topbar_cart .loading{
+		display: block;
+		margin: 5px 20px 20px;
+		text-align: center;
+		padding: 20px 0;
+		color: #424242;
+		line-height: 18px;
+	}
+	.site_topbar .container .topbar_info{float: right}
+	.site_topbar .container a:hover{color: #fff;}
+	.site_topbar .container .topbar_cart:hover a{background: #fff;color: #ff6700;}
+	.site_topbar .container .topbar_cart:hover span{color: #ff6700;}
+	
+	/*	site_header */
+	.site_header{width: 100%;}
+	.site_header .container{width: 1226px;margin: 0 auto;position: relative}
+	.site_header .container .header_logo{margin-top: 22px;float: left}
+	.site_header .container .header_logo .logo{
+		display: block;
+		width: 55px;
+		height: 55px;
+		background: url(pic/mi-logo.png) 50% 50%;
+		background-color: #ff6700;
+	}
+	.site_header .container .header_logo .link_block{
+		display: block;
+		width: 165px;
+		height: 100px;
+		background: url(pic/yyymix.gif) no-repeat 50% 50%;
+		position: absolute;
+		left: 69px;
+		bottom: 0;
+	}
+	.site_header .container .header_nav{margin-left: 234px;}
+	.site_header .container .header_nav ul{float: left}
+	.site_header .container .header_nav li{float: left;margin: 0 10px;}
+	.site_header .container .header_nav a{display: block;line-height: 100px;color: #333;}
+	.site_header .container .header_search{float: right;margin-top: 25px;position: relative}
+	.site_header .container .header_search .search_hot_words{
+		position: absolute;
+		top: 14px;
+		right: 62px;
+		text-align: right;
+		white-space:nowrap;
+	}
+	.site_header .container .header_search .search_hot_words a{
+		display: inline-block;
+		font-size: 12px;
+		color: #757575;
+		background: #eee;
+		padding: 0 5px;
+		white-space:nowrap;
+		line-height: 18px;
+		transition: 0.3s
+	}
+	.site_header .container .header_search .search_hot_words a:hover{background: #ff6700;color: #fff;transition: 0.3s}
+	.site_header .container .header_search .search_text{
+		position: absolute;
+		top: 0;
+		right: 51px;
+		width: 223px;
+		height: 48px;
+		padding: 0 10px;
+		border: 1px solid #e0e0e0;
+		box-sizing:content-box;
+		
+	}
+	.site_header .container .header_search .search_btn{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 52px;
+		height: 50px;
+		border: 1px solid #e0e0e0;
+		box-sizing: border-box;
+		background: #fff;
+	}
+	.site_header .container .header_nav a:hover{color: #ff6700}
+	.site_header .container .header_search:hover .search_text{border-color: #b0b0b0;}
+	.site_header .container .header_search .search_text:focus{outline:none;border-color: #ff6700;}
+	.site_header .container .search_btn:hover{background: #ff6700;color: #fff;border-color: #ff6700;}
+	
+	
+	/*  home_hero_container  home_hero_slider  */
+	.home_hero_container .home_hero{width: 1226px;margin: 0 auto}
+	.home_hero_container .home_hero_slider{position: relative;margin-bottom: 15px}
+	.home_hero_container .home_hero_slider .J_categoryList{
+		width: 234px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.6);
+		padding: 20px 0;
+	}
+	.home_hero_container .home_hero_slider .J_categoryList>ul>li>a{
+		color: #fff;
+		line-height: 42px;
+		font-size: 14px;
+		padding-left: 30px;
+	}
+	.home_hero_container .home_hero_slider .J_categoryList i{float: right;margin-right: 20px}
+	.home_hero_container .home_hero_slider .J_categoryList>ul>li:hover{background: #ff6700;}
+	.home_hero_container .home_hero_slider .J_categoryList .father1:hover .children1{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father2:hover .children2{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father3:hover .children3{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father4:hover .children4{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father5:hover .children5{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father6:hover .children6{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father7:hover .children7{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father8:hover .children8{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father9:hover .children9{display: block;}
+	.home_hero_container .home_hero_slider .J_categoryList .father10:hover .children10{display: block;}
+	.children{
+		height: 458px;
+		position: absolute;
+		top: 0;
+		left: 234px;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+		display: none;
+	}
+	.children-col-1{width: 266px;}
+	.children-col-2{width: 530px;}
+	.children-col-3{width: 795px;}
+	.children-col-4{width: 993px;}
+	.J_categoryList ul ul{float: left}
+	.J_categoryList li li{width: 265px;position: relative}
+	.J_categoryList li li .link{padding: 18px 0 18px 20px;display: block;width: 170px;}
+	.J_categoryList li li img{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 12px;
+	}
+	.J_categoryList li li span{line-height: 40px;color: #333;font-size: 14px;display: inline-block;}
+	.J_categoryList li li span:hover{color: #ff6700}
+	.J_categoryList .btn{
+		display:block;
+		width: 58px;
+		height: 22px;
+		position: absolute;
+		right: 10px;
+		top: 26px;
+		line-height: 22px;
+		color: #ff6700;
+		background: #fff;
+		border: 1px solid #f25807;
+		text-align: center;
+		font-size: 12px;
+		transition: 0.5s;
+	}
+	.J_categoryList .btn:hover{
+		color: #fff;
+		background: #ff6700;
+		transition: 0.3s;
+	}
+	
+	/*  home_hero_container  home_hero_sub  */
+	.home_hero_container .home_hero_sub .span4{width: 234px;float: left}
+	.home_hero_container .home_hero_sub .span4>ul{padding: 3px;background: #665e57;text-align: center;}
+	.home_hero_container .home_hero_sub .span4 li{
+		display: block;
+		float: left;
+		width: 70px;
+		height: 82px;
+		padding: 0 3px;
+	}
+	.home_hero_container .home_hero_sub .span4 a{
+		display: block;
+		color: rgba(255,255,255,0.7);
+		font-size: 12px;
+		padding-top: 18px;
+		transition:0.3s; 
+	}
+	.home_hero_container .home_hero_sub .span4 a:hover{color: rgba(255,255,255,1);transition:0.3s; }
+	.home_hero_container .home_hero_sub>img{width: 316px;height: 170px;display: block;float: right;}
+	.home_hero_container .home_hero_sub>.img1{margin-left: 15px}
+	.home_hero_container .home_hero_sub>.img2{margin-left: 15px}
+	
+	/*  home_main  */
+	.home_main{background: #f5f5f5;padding:60px 0;margin-top: 40px}
+	.home_main .box_hd{width: 1226px;margin: 0 auto;position: relative}
+	.home_main .box_hd>p{font-size: 22px;color: #333;line-height: 58px;font-weight: 200;}
+	.home_main .box_hd .more{position: absolute;top: 0;right: 0;padding-top: 16px;}
+	.home_main .box_hd .more li{float: left}
+	.home_main .box_hd .more a{
+		display: inline-block;
+		margin-left: 30px;
+		font-size: 16px;
+		color: #424242;
+		height: 24px;
+		line-height: 24px;
+		border-bottom:2px solid rgba(255,255,255,0.00); 
+		transition:border-bottom 0.5s
+	}
+	.home_main .box_hd .more a:hover{border-bottom-color: #ff6700;color: #ff6700;transition:border-bottom 0.5s}
+	.home_main .box_bd .left{float: left}
+	.home_main .box_bd .right{float: right;width: 992px;}
+	.home_main .box_bd .left img{display: block;width: 234px;height: 300px;margin-bottom: 14px}
+	.home_main .box_bd .right li{float: left;margin-bottom: 14px;margin-left: 14px}
+	.home_main .box_bd .right .big>a{
+		position: relative;
+		display: block;
+		width: 234px;
+		height: 276px;
+		background: rgba(255,255,255,1.00);
+		text-align: center;
+		padding-top: 24px;
+		overflow: hidden;
+	}
+	.home_main .box_bd .right .big img{width: 150px;height: 150px}
+	.home_main .box_bd .right .big>a>h1{font-weight: 400;font-size: 14px;color: #333;padding-bottom: 2px}
+	.home_main .box_bd .right .big>a>h2{font-weight: normal;font-size: 12px;color: #b0b0b0;padding-bottom: 20px}
+	.home_main .box_bd .right .big .jiage{display: inline;font-weight: normal;font-size: 14px;color: #ff6700;}
+	.home_main .box_bd .right .big .yuanjia{display: inline;font-weight: normal;font-size: 14px;color: #b0b0b0;text-decoration:line-through;}
+	.home_main .box_bd .right .big .hidden_box{
+		position: absolute;
+		bottom: -75px;
+		left: 0;
+		width: 174px;
+		height: 67px;
+		padding: 0 30px;
+		padding-top: 8px;
+		background: #ff6700;
+		transition: 0.3s;
+	}
+	.home_main .box_bd .right .big>a:hover .hidden_box{bottom: 0;transition: 0.3s;}
+	.home_main .box_bd .right .big .hidden_box h1{
+		display: block;
+		font-weight: normal;
+		font-size: 12px;
+		color: #fff;
+		text-align: left;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.home_main .box_bd .right .big .hidden_box h2{
+		display: block;
+		font-weight: normal;
+		font-size: 12px;
+		color: #fff;
+		text-align: left;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		text-indent: -15em;
+		margin-bottom: 15px;
+	}
+	.home_main .box_bd .right .big .hidden_box h3{
+		display: block;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(255,255,255,0.6);
+	}
+	.home_main .box_bd .right .small a{
+		position: relative;
+		display: block;
+		width: 234px;
+		height: 143px;
+		background: rgba(255,255,255,1.00);
+		text-align: center;
+	}
+	.home_main .box_bd .right .small img{position: absolute;right: 20px;top: 32px;width: 80px;height: 80px;}
+	.home_main .box_bd .right .small h1{
+		position: absolute;
+		top: 45px;
+		left: 30px;
+		font-weight: 400;
+		font-size: 14px;
+		color: #333;
+	}
+	.home_main .box_bd .right .small h2{
+		position: absolute;
+		top: 70px;
+		left: 30px;
+		font-weight: normal;
+		font-size: 14px;
+		color: #ff6700;
+	}
+	.home_main .box_bd .right .small h3{
+		position: absolute;
+		top: 45px;
+		left: 30px;
+		font-weight: normal;
+		font-size: 18px;
+		color: #333;
+	}
+	.home_main .box_bd .right .small h4{
+		position: absolute;
+		top: 70px;
+		left: 30px;
+		font-weight: normal;
+		font-size: 12px;
+		color: #757575;
+	}
+	.home_main .box_bd .right .small i{
+		position: absolute;
+		right: 35px;
+		font-size: 60px;
+		line-height: 143px;
+		color: #ff6700;
+	}
+	
+	/*	footer  */
+	.footer{width: 100%;}
+	.footer .footer_service{width: 1226px;padding: 27px 0;border-bottom: 1px solid #e0e0e0;margin: 0 auto}
+	.footer .footer_service li{float: left;width: 19.9%;text-align: center;}
+	.footer .footer_service a{
+		display: block;
+		
+		color: #616161;
+		font-size: 16px;
+		border-left: 1px solid #e0e0e0;
+		transition: 0.2s
+	}
+	.footer .footer_service a:hover{color: #ff6700;transition: 0.2s}
+	.footer .footer_service li:first-child a{border-left:none}
+	.footer .footer_service span{line-height: 25px;vertical-align: middle;}
+	.footer .footer_service i{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 25px;
+		margin-right: 5px;
+	}
+	.footer .footer_links{padding: 40px 0;width: 1226px;margin: 0 auto}
+	.footer .footer_links li{
+		float: left;
+		width: 160px;
+		height: 112px;
+	}
+	.footer .footer_links p{color: #424242;font-size: 14px;margin-bottom: 26px}
+	.footer .footer_links a{color: #757575;font-size: 12px;display: block;margin-top: 10px;}
+	.footer .footer_links a:hover{color: #ff6700}
+	.footer .footer_links .col_contact{float: right;text-align: center;width: 251px;border-left: 1px solid #e0e0e0}
+	.footer .footer_links .col_contact h1{font-size: 22px;color: #ff6700;font-weight: normal;margin-bottom: 5px;}
+	.footer .footer_links .col_contact h2{font-size: 12px;;color: #616161;font-weight: normal;margin-bottom: 16px;}
+	.footer .footer_links .col_contact a{
+		display: inline-block;
+		width: 118px;
+		height: 28px;
+		font-size: 12px;
+		color: #ff6700;
+		border:1px solid #ff6700;
+		line-height: 28px;
+		transition: 0.3s
+	}
+	.footer .footer_links .col_contact a:hover{color: #fff;background: #ff6700;transition: 0.3s}
+	.footer .site_info{width: 1226px;margin: 0 auto}
+	.footer .site_info .logo{width: 57px;height: 57px;background: url(pic/logo.png) no-repeat 50% 50%;float: left;margin-right: 10px}
+	.footer .site_info .info_text li{float: left;}
+	.footer .site_info .info_text a{color: #757575;font-size: 12px;}
+	.footer .site_info .info_text a:hover{color: #ff6700}
+	.footer .site_info .info_text span{color: #b0b0b0;line-height: 18px;margin: 0 .25em;}
+	.footer .site_info .info_text ul,.footer .site_info .info_text p{float: left}
+	.footer .site_info .info_text p{color: #b0b0b0;font-size: 12px;}
+	.footer .site_info .info_text p a{color: #b0b0b0}
+	.footer .site_info .info_links{float: right}
+	.footer .site_info .info_links img{height: 28px;}
+	.footer .slogan{
+		margin: 30px auto;
+		width: 267px;
+	    height: 19px;
+		background: url(pic/slogan2016.png) no-repeat center 0;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".search_text").focus(function(){
+			$(".search_btn").css({borderColor:"#ff6700"})
+			console.log($(".search_text").is(":focus"))
+		});
+		$(".search_text").blur(function(){
+			$(".search_btn").css({borderColor:""})
+		});
+		$(".search_text").mouseenter(function(){
+			if($(".search_text").is(":focus")==true) return;
+			$(".search_btn").css({borderColor:"#b0b0b0"})
+		});
+		$(".search_text").mouseleave(function(){
+			if($(".search_text").is(":focus")==true) return;
+			$(".search_btn").css({borderColor:""})
+		});
+		$(".search_hot_words").mouseenter(function(){
+			if($(".search_text").is(":focus")==true) return;
+			$(".search_btn").css({borderColor:"#b0b0b0"})
+		});
+		$(".search_hot_words").mouseleave(function(){
+			if($(".search_text").is(":focus")==true) return;
+			$(".search_btn").css({borderColor:""})
+		});
+		
+	});
+	
+</script>
+</head>
+
+<body>
+	<!--  site_bn_bar  -->
+	<div class="site_bn_bar">
+		<a href=""></a>
+	</div>
+	
+	<!--  site_topbar  -->
+	<div class="site_topbar">
+		<div class="container">
+			<div class="topbar_nav">
+				<ul>
+					<li><a href="">小米商城</a></li>
+					<li><span>|</span></li>
+					<li><a href="">MIUI</a></li>
+					<li><span>|</span></li>
+					<li><a href="">米聊</a></li>
+					<li><span>|</span></li>
+					<li><a href="">游戏</a></li>
+					<li><span>|</span></li>
+					<li><a href="">多看阅读</a></li>
+					<li><span>|</span></li>
+					<li><a href="">云服务</a></li>
+					<li><span>|</span></li>
+					<li><a href="">金融</a></li>
+					<li><span>|</span></li>
+					<li><a href="">小米商城移动版</a></li>
+					<li><span>|</span></li>
+					<li><a href="">问题反馈</a></li>
+					<li><span>|</span></li>
+					<li><a href="">Select Region</a></li>
+				</ul>
+			</div>
+			<div class="topbar_cart">
+				<a href=""><i class="icon1">&#xe674;</i>购物车<span>（0）</span></a>
+				<div class="cart_menu">
+					<div class="loading">购物车中还没有商品，赶紧选购吧！</div>
+				</div>
+			</div>
+			<div class="topbar_info">
+				<ul>
+					<li><a href="">登录</a></li>
+					<li><span>|</span></li>
+					<li><a href="">注册</a></li>
+					<li><span>|</span></li>
+					<li><a href="">消息通知</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--  site_header  -->
+	<div class="site_header">
+		<div class="container">
+			<div class="header_logo">
+				<a class="logo" href=""></a>
+				<a class="link_block" href=""></a>
+			</div>
+			<div class="header_nav">
+				<ul>
+					<li><a href="">小米手机</a></li>
+					<li><a href="">红米</a></li>
+					<li><a href="">平板 · 笔记本</a></li>
+					<li><a href="">电视</a></li>
+					<li><a href="">盒子 · 影音</a></li>
+					<li><a href="">路由器</a></li>
+					<li><a href="">智能硬件</a></li>
+					<li><a href="">服务</a></li>
+					<li><a href="">社区</a></li>
+					
+				</ul>
+			</div>
+			<div class="header_search">
+				<form>
+					<input class="search_text" type="search">
+					<input class="search_btn icon2" type="submit" value="&#xe615;">
+					<div class="keyword_list">
+						<ul class="result_list">
+							
+						</ul>
+					</div>
+					<div class="search_hot_words">
+						<a href="">电视4A 65"</a>
+						<a href="">小米Max 2</a>
+					</div>
+				</form>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+	</div>
+	
+	<!--  home_hero_container  -->
+	<div class="home_hero_container">
+		<div class="home_hero">
+			<div class="home_hero_slider">
+				<img style="display: block" src="pic/xmad_1500292085716_sAPHG.jpg" usemap="#Map">
+                <map name="Map">
+                        <area shape="rect" coords="325,272,501,322" href="">
+                </map>
+                <div class="J_categoryList">
+                	<ul>
+                		<li class="father1">
+                			<a href="">手机 电话卡<i class="icon3">&#xe618;</i></a>
+                			<div class="children children1 children-col-3">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father2">
+                			<a href="">笔记本 平板<i class="icon3">&#xe618;</i></a>
+                			<div class="children children2 children-col-2">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father3">
+                			<a href="">电视 盒子<i class="icon3">&#xe618;</i></a>
+                			<div class="children children3 children-col-4">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father4">
+                			<a href="">路由器 智能硬件<i class="icon3">&#xe618;</i></a>
+                			<div class="children children4 children-col-4">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father5">
+                			<a href="">移动电源 电池 插线板<i class="icon3">&#xe618;</i></a>
+                			<div class="children children5 children-col-2">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father6">
+                			<a href="">耳机 音箱<i class="icon3">&#xe618;</i></a>
+                			<div class="children children6 children-col-4">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father7">
+                			<a href="">保护套 贴膜<i class="icon3">&#xe618;</i></a>
+                			<div class="children children7 children-col-3">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father8">
+                			<a href="">线材 支架 储存卡<i class="icon3">&#xe618;</i></a>
+                			<div class="children children8 children-col-3">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father9">
+                			<a href="">箱包 服饰 鞋 眼镜<i class="icon3">&#xe618;</i></a>
+                			<div class="children children9 children-col-3">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                		<li class="father10">
+                			<a href="">米兔 生活周边<i class="icon3">&#xe618;</i></a>
+                			<div class="children children10 children-col-3">
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>小米6</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>小米5X</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米Max 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/5c_80.png"><span>小米手机5c</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xmNOTE2-80.jpg"><span>小米Note 2</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/MIX-80.jpg"><span>小米MIX</span>
+                						</a>
+                						<a class="btn" href="">选购</a>
+                					</li>
+                				</ul>
+                				<ul>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/xm6_80.png"><span>对比手机</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/80pc-5x.png"><span>米粉卡 日租卡</span>
+                						</a>
+                					</li>
+                					<li>
+                						<a class="link" href="">
+                							<img src="pic/max2_80.jpg"><span>小米移动 电话卡</span>
+                						</a>
+                					</li>
+                				</ul>
+                			</div>
+                		</li>
+                	</ul>
+                </div>
+			</div>
+			<div class="home_hero_sub">
+				<div class="span4">
+					<ul>
+						<li><a href=""><p class="icon4">&#xe601;</p>选购手机</a></li>
+						<li><a href=""><p class="icon4">&#xe600;</p>企业团购</a></li>
+						<li><a href=""><p class="icon4">&#xe696;</p>一元活动</a></li>
+						<li><a href=""><p class="icon4">&#xe603;</p>米粉卡</a></li>
+						<li><a href=""><p class="icon4">&#xe630;</p>以旧换新</a></li>
+						<li><a href=""><p class="icon4">&#xe602;</p>话费充值</a></li>
+						<div style="clear: both"></div>
+					</ul>
+				</div>
+				<img class="img1" src="pic/df7c6d47-c09f-49d1-9a9f-df0d2294bec8.jpg">
+				<img class="img2" src="pic/xmad_15011426522699_kQyli.jpg">
+				<img class="img3" src="pic/xmad_14993367479701_kbMcI.jpg">
+				<div style="clear: both"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="home_main">
+		<div class="box_hd">
+			<p>智能</p>
+			<div class="more">
+				<ul>
+					<li><a href="">热门</a></li>
+					<li><a href="">出行</a></li>
+					<li><a href="">健康</a></li>
+					<li><a href="">酷玩</a></li>
+					<li><a href="">路由器</a></li>
+				</ul>
+			</div>
+			<div class="box_bd">
+				<div class="left">
+					<a href=""><img class="xiaoguo" src="pic/xmad_15003764013459_VjEDO.jpg"></a>
+					<a href=""><img class="xiaoguo" src="pic/xmad_15009767233099_uIQSM.jpg"></a>
+					<div style="clear: both"></div>
+				</div>
+				<div class="right">
+					<ul>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/pms_1483942428.16162503!220x220.jpg">
+								<h1>小方摄像机</h1>
+								<h2>1080P 好清晰，看家看娃看宠物</h2>
+								<h3>
+									<p class="jiage"><span class="number">119</span>元</p>
+									<p class="yuanjia"><span class="number">129</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>客服妹子，你出来我保证不打你，上午9点下单，下午2:...</h1>
+									<h2>客服妹子，你出来我保证不打你，上午9点下单，下午2:....</h2>
+									<h3> 来自于 MI小秋 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg">
+								<h1>电助力折叠自行车</h1>
+								<h2>力矩传感电助力，折叠便携设计</h2>
+								<h3>
+									<p class="jiage"><span class="number">2999</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>客服妹妹我这是中毒了么？</h1>
+									<h2>客服妹妹我这是中毒了么？</h2>
+									<h3> 来自于 李洪雁 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/pms_1488449975.74164506!220x220.jpg">
+								<h1>小米米家对讲机</h1>
+								<h2>8天超长待机，位置共享，FM收音机</h2>
+								<h3>
+									<p class="jiage"><span class="number">249</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>超好，就是没去考无线电证，应该没关系吧</h1>
+									<h2>超好，就是没去考无线电证，应该没关系吧</h2>
+									<h3> 来自于 幸 ♥ 运 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/pms_1482392555.22071382!220x220.jpg">
+								<h1>米家车载空气净化器</h1>
+								<h2>双风机循环气流，高效净化车内空气</h2>
+								<h3>
+									<p class="jiage"><span class="number">449</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>新的刚用就提示换滤芯</h1>
+									<h2>新的刚用就提示换滤芯</h2>
+									<h3> 来自于 姜宪峰律师 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/pms_1478761096.92412274!220x220.jpg">
+								<h1>Amazfit 运动手表</h1>
+								<h2>蓝牙听歌，运动心率，智能通知提醒</h2>
+								<h3>
+									<p class="jiage"><span class="number">799</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>小米没的说，手表做工非常精致，太喜欢了，物流相当快，...</h1>
+									<h2>小米没的说，手表做工非常精致，太喜欢了，物流相当快，...</h2>
+									<h3> 来自于 柏林 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/pms_1496730880.16174470!220x220.jpg">
+								<h1>小蚁微单相机M1双镜头套机</h1>
+								<h2>2016 万有效像素，4K视频录制</h2>
+								<h3>
+									<p class="jiage"><span class="number">2999</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>看着很不错 手感也很好支持小米</h1>
+									<h2>看着很不错 手感也很好支持小米</h2>
+									<h3> 来自于 落叶知秋 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo big">
+							<a href="">
+								<img src="pic/pms_1467962689.97551741!220x220.jpg">
+								<h1>小米手环2</h1>
+								<h2>OLED 显示屏幕，升级计步算法</h2>
+								<h3>
+									<p class="jiage"><span class="number">149</span>元</p>
+								</h3>
+								<div class="hidden_box">
+									<h1>听说晒单有客服小仙女？？？</h1>
+									<h2>听说晒单有客服小仙女？？？</h2>
+									<h3> 来自于 396848965 的评价 </h3>
+								</div>
+							</a>
+						</li>
+						<li class="xiaoguo small">
+							<a href="">
+								<img src="pic/xmad_14988107613863_SWjuV.jpg">
+								<h1>盒子3 增强版</h1>
+								<h2><span>399</span>元</h2>
+							</a>
+						</li>
+						<li class="xiaoguo small">
+							<a href="">
+								<h3>浏览更多</h3>
+								<h4>健康</h4>
+								<i class="icon">&#xe612;</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="footer_service">
+			<ul>
+				<li><a href=""><i class="icon">&#xe699;</i><span>预约维修服务</span></a></li>
+				<li><a href=""><i class="icon">&#xe604;</i><span>7天无理由退货</span></a></li>
+				<li><a href=""><i class="icon">&#xe628;</i><span>15天免费换货</span></a></li>
+				<li><a href=""><i class="icon">&#xe605;</i><span>满150元包邮</span></a></li>
+				<li><a href=""><i class="icon">&#xe665;</i><span>520余家售后网点</span></a></li>
+				<div style="clear: both"></div>
+			</ul>
+		</div>
+		<div class="footer_links">
+			<ul>
+				<li>
+					<p>帮助中心</p>
+					<a href="">账户管理</a>
+					<a href="">购物指南</a>
+					<a href="">订单操作</a>
+				</li>
+				<li>
+					<p>服务支持</p>
+					<a href="">售后政策</a>
+					<a href="">自助服务</a>
+					<a href="">相关下载</a>
+				</li>
+				<li>
+					<p>线下门店</p>
+					<a href="">小米之家</a>
+					<a href="">服务网点</a>
+					<a href="">零售网点</a>
+				</li>
+				<li>
+					<p>关于小米</p>
+					<a href="">了解小米</a>
+					<a href="">加入小米</a>
+					<a href="">联系我们</a>
+				</li>
+				<li>
+					<p>关注我们</p>
+					<a href="">新浪微博</a>
+					<a href="">小米部落</a>
+					<a href="">官方微信</a>
+				</li>
+				<li>
+					<p>特色服务</p>
+					<a href="">F 码通道</a>
+					<a href="">礼物码</a>
+					<a href="">防伪查询</a>
+				</li>
+				<div class="col_contact">
+					<h1>小米客服</h1>
+					<h2>7x24小时全天陪伴<br>为您解决问题</h2>
+					<a href="">立即开始咨询</a>
+				</div>
+				<div style="clear: both"></div>
+			</ul>
+		</div>
+		<div class="site_info">
+			<div class="logo"></div>
+			<div class="info_links">
+				<a href=""><img src="pic/truste.png"></a>
+				<a href=""><img src="pic/v-logo-2.png"></a>
+				<a href=""><img src="pic/v-logo-1.png"></a>
+				<a href=""><img src="pic/v-logo-3.png"></a>
+			</div>
+			<div class="info_text">
+				<ul>
+					<li><a href="">小米商城</a></li>
+					<li><span>|</span></li>
+					<li><a href="">MIUI</a></li>
+					<li><span>|</span></li>
+					<li><a href="">米聊</a></li>
+					<li><span>|</span></li>
+					<li><a href="">多看书城</a></li>
+					<li><span>|</span></li>
+					<li><a href="">小米路由器</a></li>
+					<li><span>|</span></li>
+					<li><a href="">视频电话</a></li>
+					<li><span>|</span></li>
+					<li><a href="">小米天猫店</a></li>
+					<li><span>|</span></li>
+					<li><a href="">小米淘宝直营店</a></li>
+					<li><span>|</span></li>
+					<li><a href="">小米网盟</a></li>
+					<li><span>|</span></li>
+					<li><a href="">小米移动</a></li>
+					<li><span>|</span></li>
+					<li><a href="">隐私政策</a></li>
+					<li><span>|</span></li>
+					<li><a href="">Select Region</a></li>
+					<div style="clear: both"></div>
+				</ul>
+				<p>©<a href="">mi.com</a>
+				 京ICP证110507号 
+				 <a href="">京ICP备10046444号</a> 
+				 <a href="">京公网安备11010802020134号</a> 
+				 <a href="">京网文[2014]0059-0009号</a>
+				<br>
+				违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<div class="slogan"></div>
+	</div>
+	
+</body>
+</html>
